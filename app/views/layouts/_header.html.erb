@@ -8,7 +8,13 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/restaurants">スパル食べログ</a>
+      <p class="navbar-text">
+      <% if user_signed_in? %>
+        へようこそ、<%= current_user.email %>さん！
+      <% end %>
+      </p>
     </div>
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
