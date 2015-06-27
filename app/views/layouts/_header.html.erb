@@ -10,7 +10,7 @@
       <strong><a class="navbar-brand" href="/restaurants"><span class="glyphicon glyphicon-cutlery" aria-hidden="true" style=color:#f0ad4e;></span>スパル食べログ<span class="glyphicon glyphicon-cutlery" aria-hidden="true" style=color:#f0ad4e;></span></a></strong>
       <p class="navbar-text">
       <% if user_signed_in? %>
-        へようこそ、<%= current_user.email %>さん！
+        へようこそ、<%= current_user.family_name %>さん！
       <% end %>
       </p>
     </div>

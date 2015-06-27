@@ -1,9 +1,13 @@
 <div class="row">
-  <div class="col-lg-12">
-    <h1 class="bg-warning">レストラン一覧</h1>
-     <p>レストラン情報が表示されます。</p>
+  <div class="col-md-8">
 
-    <table class="table table-striped">
+    <div class="panel panel-warning">
+      <div class="panel-heading">レストラン一覧</div>
+        <div class="panel-body">
+          <p>お気に入りのレストランを登録して、レビューしてください。<br>他のユーザーが登録したレストランにも、レビューが書けるよ！</p>
+        </div>
+
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>店名</th>
@@ -14,22 +18,30 @@
           </tr>
         </thead>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.homepage %></td>
-        <td><%= link_to '詳細', restaurant, class: "btn btn-default btn-xs" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+          <% @restaurants.each do |restaurant| %>
+            <tr>
+              <td><%= restaurant.name %></td>
+              <td><%= restaurant.phone %></td>
+              <td><%= restaurant.address %></td>
+              <td><%= restaurant.homepage %></td>
+              <td><%= link_to '詳細', restaurant, class: "btn btn-default btn-xs" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<br>
- <div class="text-center">
-     <%= link_to '新規レストラン登録', new_restaurant_path, class: "btn btn-default btn-md" %>
+        <br>
+      <div class="text-center">
+         <%= link_to '新規レストラン登録', new_restaurant_path, class: "btn btn-default btn-md" %>
+      </div>
+        <br>
+
+    </div>
   </div>
 
-<br>
+  <div class="col-md-4">
+
+  </div>
+
+</div>

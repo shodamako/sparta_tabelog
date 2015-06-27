@@ -1,3 +1,4 @@
+<h3 class="bg-warning">店舗情報</h3>
 <p>
   <strong>店名:</strong>
   <%= @restaurant.name %>
@@ -20,34 +21,24 @@
 <%= link_to '戻る', restaurants_path %> |
 <%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %> |
 
+<hr>
 
-
-
+ <h3 class="bg-warning">評価平均</h3>
+    <p><%= @points %></p>
 
 <hr>
 
-    <h4>評価</h4>
-
+    <h3 class="bg-warning">レビュー一覧</h3>
     <% @restaurant.reviews.each do |review| %>
-      <p>
-      <%= review.point %>
-      </p>
-    <% end %>
-<br>
-<br>
- <h4>評価平均</h4>
-    <p>
-    <%= @points %>
-    </p>
 
-<hr>
+      <blockquote>
+        <h4><%= review.body %></h4>
+          <em><footer><%= review.user.family_name %>
+            さんがレビューしました。
+          </footer></em>
 
-    <h2>レビュー一覧</h2>
-    <% @restaurant.reviews.each do |review| %>
-      <p>
-        <%= review.body %> <br>
-        by <%= review.user.email %>
-      </p>
+      </blockquote>
+
       <%= link_to '編集', edit_restaurant_review_path(@restaurant, review) %> |
       <%= link_to "削除", restaurant_review_path(@restaurant, review), method: :delete %>
 
@@ -55,7 +46,7 @@
     <% end %>
 
 <hr>
-    <h2>レビューを残したユーザー一覧</h2>
+    <h3 class="bg-warning">レビューを残したユーザー一覧</h3>
     <% @restaurant.users.each do |user| %>
-      <p><%= user.email %></p>
+      <p><%= user.family_name %>さん</p>
     <% end %>
