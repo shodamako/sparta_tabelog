@@ -22,7 +22,11 @@
 
 <%= link_to '編集する', edit_restaurant_path(@restaurant) %> |
 <%= link_to '戻る', restaurants_path %> |
-<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %>
+<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %> |
+
+
+
+
 
 <hr>
 
@@ -48,6 +52,10 @@
         <%= review.body %> <br>
         by <%= review.user.email %>
       </p>
+      <%= link_to '編集', edit_restaurant_review_path(@restaurant, review) %> |
+      <%= link_to "削除", restaurant_review_path(@restaurant, review), method: :delete %>
+
+
     <% end %>
 
 <hr>

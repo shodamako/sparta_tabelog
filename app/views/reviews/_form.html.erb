@@ -1,7 +1,7 @@
 <%= form_for([@restaurant, @review]) do |f| %>
 
   <%= f.label :point, '評価点' %><br>
-  <%= f.select :point, [1,2,3,4,5] %>
+  <%= f.select :point, [1,2,3,4,5], selected: @review.point.to_i %>
 
   <div class="form-group">
     <%= f.label :body, 'レビュー' %><br>
