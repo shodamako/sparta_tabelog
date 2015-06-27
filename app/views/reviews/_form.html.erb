@@ -1,11 +1,12 @@
 <%= form_for([@restaurant, @review]) do |f| %>
-  <div class="form-group">
-    <%= f.label :point, '評価点' %><br>
-    <%= f.number_field :point, class: "form-control" %>
-  </div>
+
+  <%= f.label :point, '評価点' %><br>
+  <%= f.select :point, [1,2,3,4,5] %>
+
   <div class="form-group">
     <%= f.label :body, 'レビュー' %><br>
     <%= f.text_area :body, class: "form-control" %>
   </div>
+
   <%= f.submit %>
 <% end %>
