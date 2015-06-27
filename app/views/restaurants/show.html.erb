@@ -20,5 +20,22 @@
   <%= @restaurant.homepage %>
 </p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= link_to '編集する', edit_restaurant_path(@restaurant) %> |
+<%= link_to '戻る', restaurants_path %> |
+<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %>
+
+<hr>
+
+    <h2>レビュー一覧</h2>
+    <% @restaurant.reviews.each do |review| %>
+      <p>
+        <%= review.body %> <br>
+        by <%= review.user.email %>
+      </p>
+    <% end %>
+
+<hr>
+    <h2>レビューを残したユーザー一覧</h2>
+    <% @restaurant.users.each do |user| %>
+      <p><%= user.email %></p>
+    <% end %>
