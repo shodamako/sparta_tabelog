@@ -1,8 +1,8 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
-      t.float :point
-      t.text :body, null:false
+      t.float :point, null: false
+      t.text :body,   null: false
       t.references :restaurant, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
 
