@@ -19,22 +19,3 @@
 .notice-warning {
     border-color: #FEAF20;
 }
-
-.starlevel5 {
-   background-image: ☆; /*星画像*/
-   background-repeat: no-repeat; /* 繰り返しはナシ */
-   width: 75px;                  /* 横幅は星５つ分 */
-   height: 15px;                 /* 高さは星１つ分 */
-}
-.star50 { background-position: left top; }
-.star40 { background-position: -15px top; }
-.star30 { background-position: -30px top; }
-.star20 { background-position: -45px top; }
-.star10 { background-position: -60px top; }
-.star00 { background-position: -75px top; }
-
-.star45 { background-position: -150px top; }
-.star35 { background-position: -165px top; }
-.star25 { background-position: -180px top; }
-.star15 { background-position: -195px top; }
-.star05 { background-position: -210px top; }
