@@ -1,25 +1,31 @@
 <h3 class="bg-warning">店舗情報</h3>
+
+<table class="table table-condensed">
+
 <p>
-  <strong>店名:</strong>
+  <strong>　店　名:</strong>　
   <%= @restaurant.name %>
 </p>
 <p>
-  <strong>電話番号:</strong>
+  <strong>電話番号:</strong>　
   <%= @restaurant.phone %>
 </p>
 <p>
-  <strong>住所:</strong>
+  <strong>　住　所:</strong>　
   <%= @restaurant.address %>
 </p>
 <p>
-  <strong>ホームページ:</strong>
+  <strong>　Ｈ　Ｐ:</strong>　
   <%= @restaurant.homepage %>
 </p>
 
+</table>
+
 <%= link_to '編集', edit_restaurant_path(@restaurant) %> |
 <%= link_to '削除', restaurant_path(@restaurant), method: :delete %> |
-<%= link_to '戻る', restaurants_path %> |
 <%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %> |
+<%= link_to '戻る', restaurants_path %>
+
 
 <hr>
 
