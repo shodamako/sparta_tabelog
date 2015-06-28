@@ -1,25 +1,33 @@
 <h3 class="bg-warning">店舗情報</h3>
 
-<table class="table table-condensed">
+<div class="row">
+  <div class="col-md-4">
+    <table class="table table-condensed">
+      <p>
+        <strong>　店　名:</strong>　
+        <%= @restaurant.name %>
+      </p>
+      <p>
+        <strong>電話番号:</strong>　
+        <%= @restaurant.phone %>
+      </p>
+      <p>
+        <strong>　住　所:</strong>　
+        <%= @restaurant.address %>
+      </p>
+      <p>
+        <strong>　Ｈ　Ｐ:</strong>　
+        <%= @restaurant.homepage %>
+      </p>
+    </table>
+  </div>
 
-<p>
-  <strong>　店　名:</strong>　
-  <%= @restaurant.name %>
-</p>
-<p>
-  <strong>電話番号:</strong>　
-  <%= @restaurant.phone %>
-</p>
-<p>
-  <strong>　住　所:</strong>　
-  <%= @restaurant.address %>
-</p>
-<p>
-  <strong>　Ｈ　Ｐ:</strong>　
-  <%= @restaurant.homepage %>
-</p>
+  <div class="col-md-4">
+    <iframe src="http://maps.google.co.jp/maps?q=<%= @restaurant.address %>&z=14&output=embed" height="300" width="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  </div>
+</div>
 
-</table>
+<br>
 
 <%= link_to '編集', edit_restaurant_path(@restaurant) %> |
 <%= link_to '削除', restaurant_path(@restaurant), method: :delete %> |
@@ -30,17 +38,20 @@
 
  <h3 class="bg-warning">評価平均</h3>
 
-  <% if @points <= 1 %>
-    <h4><%= @points %>　★☆☆☆☆</h4>
-  <% elsif @points <= 2 %>
-    <h4><%= @points %>　★★☆☆☆</h4>
-  <% elsif @points <= 3 %>
-    <h4><%= @points %>　★★★☆☆</h4>
-  <% elsif @points <= 4 %>
-    <h4><%= @points %>　★★★★☆</h4>
-  <% else %>
-    <h4><%= @points %>　★★★★★</h4>
-  <% end %>
+
+      <% if @points == 0 %>
+        <h4>まだレビューがありません</h4>
+      <% elsif @points <= 1 %>
+        <h4><%= @points %>　★☆☆☆☆</h4>
+      <% elsif @points <= 2 %>
+        <h4><%= @points %>　★★☆☆☆</h4>
+      <% elsif @points <= 3 %>
+        <h4><%= @points %>　★★★☆☆</h4>
+      <% elsif @points <= 4 %>
+        <h4><%= @points %>　★★★★☆</h4>
+      <% else %>
+        <h4><%= @points %>　★★★★★</h4>
+      <% end %>
 
 <hr>
 

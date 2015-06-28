@@ -5,14 +5,20 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-     @restaurants = Restaurant.all
+     # @restaurants = Restaurant.all
+    @q = Restaurant.search(params[:q])
+    @restaurants = @q.result
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
     @restaurant = Restaurant.find(params[:id])
-    @points = @restaurant.reviews.average(:point)
+    if @restaurant.reviews.count > 0
+      @points = @restaurant.reviews.average(:point)
+    else
+      @points = 0
+    end
   end
 
   # GET /restaurants/new
