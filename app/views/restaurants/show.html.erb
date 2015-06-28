@@ -31,13 +31,12 @@
     <h3 class="bg-warning">レビュー一覧</h3>
     <% @restaurant.reviews.each do |review| %>
 
-      <blockquote>
+      <div class="notice notice-warning">
         <h4><%= review.body %></h4>
-          <em><footer><%= review.user.family_name %>
+          <em><footer>　ー <%= review.user.family_name %>
             さんがレビューしました。
           </footer></em>
-
-      </blockquote>
+      </div>
 
       <%= link_to '編集', edit_restaurant_review_path(@restaurant, review) %> |
       <%= link_to "削除", restaurant_review_path(@restaurant, review), method: :delete %>
