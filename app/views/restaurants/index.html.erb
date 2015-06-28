@@ -1,10 +1,8 @@
-
 <div class="row color">
-
   <div class="col-md-8">
-
     <div class="panel panel-warning">
       <div class="panel-heading">レストラン一覧</div>
+
         <div class="panel-body">
           <p>お気に入りのレストランを登録して、レビューしてください。<br>他のユーザーが登録したレストランにも、レビューが書けるよ！</p>
         </div>
@@ -27,7 +25,7 @@
               <td><%= restaurant.phone %></td>
               <td><%= restaurant.address %></td>
               <td><%= restaurant.homepage %></td>
-              <td><%= link_to '詳細', restaurant, class: "btn btn-default btn-xs" %></td>
+              <td><%= link_to "詳細", restaurant, class: "btn btn-default btn-xs" %></td>
             </tr>
           <% end %>
         </tbody>
@@ -42,7 +40,9 @@
     </div>
   </div>
 
-  <div class="col-md-4">
+ <br>
+
+  <div class="col-md-2">
     <div class="input-group" style="width:380px;text-align:center;margin:0 auto;">
     <%= search_form_for @q do |f| %>
 
@@ -53,4 +53,26 @@
     </div>
   </div>
 
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div class="container">
+      <hr>
+        <div class="text-center center-block">
+            <p class="txt-railway">- スパルタキャンプ５期　小玉 -</p>
+            <br />
+                <!--Pulling Awesome Font -->
+
+
+    <div class="col-md-12">
+      <ul class="social-network social-circle">
+        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+          </div>
+      </div>
 </div>
