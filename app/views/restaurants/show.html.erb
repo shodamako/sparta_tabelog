@@ -38,9 +38,12 @@
           </footer></em>
       </div>
 
-      <%= link_to '編集', edit_restaurant_review_path(@restaurant, review) %> |
-      <%= link_to "削除", restaurant_review_path(@restaurant, review), method: :delete %>
-
+      <% if review.user.id == current_user.id %>
+        <%= link_to '編集', edit_restaurant_review_path(@restaurant, review) %> |
+        <%= link_to "削除", restaurant_review_path(@restaurant, review), method: :delete %>
+      <% else %>
+        <p></p>
+      <% end %>
 
     <% end %>
 
