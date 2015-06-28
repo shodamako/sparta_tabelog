@@ -26,11 +26,21 @@
 <%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %> |
 <%= link_to '戻る', restaurants_path %>
 
-
 <hr>
 
  <h3 class="bg-warning">評価平均</h3>
-    <p><%= @points %></p>
+
+  <% if @points <= 1 %>
+    <h4><%= @points %>　★☆☆☆☆</h4>
+  <% elsif @points <= 2 %>
+    <h4><%= @points %>　★★☆☆☆</h4>
+  <% elsif @points <= 3 %>
+    <h4><%= @points %>　★★★☆☆</h4>
+  <% elsif @points <= 4 %>
+    <h4><%= @points %>　★★★★☆</h4>
+  <% else %>
+    <h4><%= @points %>　★★★★★</h4>
+  <% end %>
 
 <hr>
 
